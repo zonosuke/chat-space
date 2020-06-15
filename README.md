@@ -27,3 +27,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
+
+### Association
+- has_many :groups_users
