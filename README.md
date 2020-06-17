@@ -16,7 +16,7 @@
 |------|----|-------|
 |id|integer|null: false|
 |name|string|null: false|
-|email|string|null: false, unique: true
+|email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 
 ### Association
