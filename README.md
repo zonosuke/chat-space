@@ -41,7 +41,7 @@
 |------|----|-------|
 |id|integer|null: false|
 |user-id|integer|null: false, foreign_key: true|
-|text|text|null: false|
+|comment|text|null: false|
 |created-at|string|null: false|
 
 ### Association
