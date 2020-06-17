@@ -40,10 +40,10 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |user-id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false,foreign_key: true|
 |image|string|
-|comment|text|null: false|
+|comment|text|
 |created-at|string|null: false|
 
 ### Association
