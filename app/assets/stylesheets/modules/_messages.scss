@@ -1,15 +1,8 @@
 @import "variable";
+@import "mixin";
 
 * {
   box-sizing: border-box;
-}
-
-@mixin flex {
-  display: flex;
-}
-
-@mixin justify-content {
-  justify-content: space-between;
 }
 
 .wrapper {
