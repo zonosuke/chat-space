@@ -74,9 +74,12 @@
         color: #333333;
         margin-bottom: 15px;
       }
-      &--member-list {
-        font-size: 12px;
-        color: #999999;
+      .main-header__member {    
+        @include flex;   
+        .main-header__left-box--member-list {
+          font-size: 12px;
+          color: #999999;
+        }
       }
     }
     .chat-main__group-edit--btn {
@@ -93,24 +96,28 @@
     width: calc(100vw - 300px);
     padding-top: 35px;
     padding-left: 40px;
-    .main-message__list{
+    .main-message__user-date {
       @include flex;
-      .main-message__user-name {
+      .main-message__user-date__name {
         color: #333333;
         font-size: 16px;
         margin-bottom: 12px;
       }
-      .main-message__date {
+      .main-message__user-date__date {
         color: #999999;
         font-size: 12px;
         margin-left: 10px;
       } 
     }
-    .main-message__comment {
-      color: #434A54;
-      font-size: 14px;
-      margin-bottom: 46px;
-    }
+      .main-message__comment {
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 46px;
+        &__content {
+
+        }  
+      }
+    
     .main-message__history-message {
       display: flex;
       .main-message__user-name--other {
@@ -137,28 +144,32 @@
     @include flex;
     @include justify-content;
     align-items: center;
-    &__message-text {
-      height: 50px;
+    .new_message {
       @include flex;
-      align-items: center;
-      width: 100%;
-      margin-right: 15px;
-      position: relative;
-      padding-left: 10px;
-    }   
-      .main-form__box-image {
-        position: absolute;
-        right: 20px;
-        input {
-          display: none;
-        }      
-      }   
-    &__btn {
-      width: 100px;
-      height: 50px;
-      color: $whiteColor;
-      background-color: #00a9ff;
-      border: none;
+      @include justify-content;  
+      .main-form__message-text {
+        height: 50px;        
+        align-items: center;
+        width: 100%;
+        margin-right: 15px;
+        position: relative;
+        padding-left: 10px;        
+        .main-form__box-image {
+          position: absolute;
+          top: 15px;
+          right: 50px;
+          input {
+            display: none;
+          }      
+        }  
+      } 
+      .main-form__btn {
+        width: 100px;
+        height: 50px;
+        color: $whiteColor;
+        background-color: #00a9ff;
+        border: none;
+      }
     }
   }
 }
