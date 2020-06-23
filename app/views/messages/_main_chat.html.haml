@@ -2,35 +2,22 @@
   .main-header
     .main-header__left-box
       .main-header__left-box--current-group
-        test
-      .main-header__left-box--member-list
-        Member : kosuke
+        = @group.name
+      .main-header__member
+        .main-header__left-box--member-list
+          Member:
+          - @group.users.each do |user|
+            = user.name
     .chat-main__group-edit
-    = link_to "#", class: "chat-main__group-edit chat-main__group-edit--btn" do
+    = link_to edit_group_path(@group.id), method: :get, class: "chat-main__group-edit chat-main__group-edit--btn" do
       Edit
-  .main-message__lists
-    .main-message__list
-      .main-message__user-name
-        kosuke
-      .main-message__date
-        2019/11/20(Wed) 17:43:01
-    .main-message__comment
-      おはよう！
-    .main-message__history-message
-      .main-message__user-name--other
-        kosuke
-      .main-message__date--other
-        2019/11/20(Wed) 17:43:34
-    .main-message__comment--other
-      今日は夜から雨
+  .main-message__lists     
+    = render partial: "message", collection: @messages
   .main-form
-    .main-form__message-text
-      %input{type: "text", placeholder: "type a message", class: "main-form__message-text"}
-      .main-form__box-image
-      %label{class: "main-form__box-image"}
-        = icon('fas', 'image')
-        %input{type: "file"}
-    .main-form__btn
-      %input{type: "submit", value: "Send", class: "main-form__btn"}
-      
-  
+    = form_for [@group, @message] do |f|
+      .main-form__message-text
+        = f.text_field :comment, placeholder: "type a message", class: "main-form__message-text"
+        = f.label :image, class: "main-form__box-image" do
+          = icon('fas', 'image', class: "icon")
+          = f.file_field :image, class: "hidden"
+      = f.submit 'Send', class: 'main-form__btn'

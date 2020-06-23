@@ -1,0 +1,11 @@
+.main-message__list   
+  .main-message__user-date   
+    .main-message__user-date__name
+      = message.user.name
+    .main-message__user-date__date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .main-message__comment
+    - if message.comment.present?
+      %p.main-message__content
+        = message.comment
+    = image_tag message.image.url, size: 10*10, class: "main-message__image" if message.image.present?
