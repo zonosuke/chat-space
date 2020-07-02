@@ -2,7 +2,7 @@ $(function() {
       function buildHTML(message) {
         if (message.image) {
           var html = 
-            `<div class="main-message__lists>
+            `<div class="main-message__list">
               <div class="main-message__user-date">
                 <div class="main-message__user-date__name">
                   ${message.user_name}
@@ -12,14 +12,18 @@ $(function() {
                 </div>
               </div>
               <div class="main-message__comment">
+                <p class="main-message__content">
                   ${message.comment}
+                </p>
               </div>
-              ${message.image} 
+              <div class="main-message__image">
+              ${message.image}    
+              </div>       
             </div>`
           return html;
         } else {
           var html = 
-            `<div class="main-message__lists>
+            `<div class="main-message__list">
               <div class="main-message__user-date">
                 <div class="main-message__user-date__name">
                   ${message.user_name}
@@ -28,7 +32,9 @@ $(function() {
                   ${message.created_at}
                 </div>
                 <div class="main-message__comment">
-                  ${message.comment}
+                  <p class="main-message__content">
+                    ${message.comment}
+                  </p>
                 </div>             
               </div>
             </div>`
