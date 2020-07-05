@@ -15,10 +15,10 @@ $(function() {
                 <p class="main-message__content">
                   ${message.comment}
                 </p>
+                <div class="main-message__image">
+                  <img src=${message.image}>  
+                </div> 
               </div>
-              <div class="main-message__image">
-              ${message.image}    
-              </div>       
             </div>`
           return html;
         } else {
@@ -31,12 +31,12 @@ $(function() {
                 <div class="main-message__user-date__date">
                   ${message.created_at}
                 </div>
+              </div>
                 <div class="main-message__comment">
                   <p class="main-message__content">
                     ${message.comment}
                   </p>
                 </div>             
-              </div>
             </div>`
           return html;  
         };

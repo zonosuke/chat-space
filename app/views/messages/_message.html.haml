@@ -8,4 +8,4 @@
     - if message.comment.present?
       %p.main-message__content
         = message.comment
-    = image_tag message.image.url, size: 10*10, class: "main-message__image" if message.image.present?
+    = image_tag message.image.url, class: "main-message__image" if message.image.present?
