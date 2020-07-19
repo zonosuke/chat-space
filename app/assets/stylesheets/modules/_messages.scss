@@ -147,7 +147,8 @@
     align-items: center;
     .new_message {
       @include flex;
-      @include justify-content;  
+      @include justify-content; 
+      width: 100vw; 
       .main-form__message-text {
         height: 50px;        
         align-items: center;
